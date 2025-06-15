@@ -6,6 +6,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from flask import Flask
 from telegram import Bot
 from telegram.error import TelegramError
+import pytz
 
 BOT_TOKEN = "7614379751:AAGPa1hR0NLwsArzgAihp8nsiENHLZZhH5k"
 CHAT_ID = "-4849727709"
@@ -28,8 +29,8 @@ def send_poll_sync():
     asyncio.run(send_daily_poll())
 
 def start_scheduler():
-    scheduler = BlockingScheduler()
-    scheduler.add_job(send_poll_sync, 'cron', hour=7, minute=0)
+    scheduler = BlockingScheduler(timezone=pytz.timezone('Asia/Kolkata'))
+    scheduler.add_job(send_poll_sync, 'cron', hour=7, minute=0, id='daily_poll')
     print("Scheduler started. Daily poll will be sent at 7:00 AM IST")
     try:
         scheduler.start()
