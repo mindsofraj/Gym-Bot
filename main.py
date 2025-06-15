@@ -8,7 +8,7 @@ from telegram import Bot
 from telegram.error import TelegramError
 
 BOT_TOKEN = "7614379751:AAGPa1hR0NLwsArzgAihp8nsiENHLZZhH5k"
-CHAT_ID = "4870741901"
+CHAT_ID = "-4849727709"
 
 bot = Bot(token=BOT_TOKEN)
 
