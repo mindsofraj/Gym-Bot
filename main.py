@@ -6,8 +6,8 @@ from flask import Flask
 from telegram import Bot
 from telegram.error import TelegramError
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-CHAT_ID = os.getenv("CHAT_ID")
+BOT_TOKEN = "7614379751:AAGPa1hR0NLwsArzgAihp8nsiENHLZZhH5k"
+CHAT_ID = "4870741901"
 
 bot = Bot(token=BOT_TOKEN)
 
